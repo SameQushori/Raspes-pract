@@ -1,0 +1,268 @@
+/**
+ * СТИЛИ КОМПОНЕНТА ЧАТА
+ */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: var(--chat-max-width);
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+/* === ШАПКА === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.themeToggle {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--surface-hover);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+  background-color: var(--border);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.apiStatus {
+  font-size: var(--font-size-sm);
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-hover);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* === КОНТЕЙНЕР СООБЩЕНИЙ === */
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* === СООБЩЕНИЕ === */
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Сообщение пользователя */
+.message.user {
+  align-self: flex-end;
+  background-color: var(--user-message-bg);
+  color: var(--user-message-text);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+/* Сообщение бота */
+.message.bot {
+  align-self: flex-start;
+  background-color: var(--bot-message-bg);
+  color: var(--bot-message-text);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.messageText {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.timestamp {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
+  text-align: right;
+}
+
+/* === ИНДИКАТОР ПЕЧАТИ === */
+.typing {
+  display: flex;
+  gap: 4px;
+  padding: var(--spacing-sm);
+}
+
+.typing span {
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* === БОГАТЫЙ КОНТЕНТ === */
+.richContent {
+  font-size: var(--font-size-base);
+}
+
+.richContent ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--spacing-sm);
+}
+
+.richContent li {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.richContent li:last-child {
+  border-bottom: none;
+}
+
+.richContent .error-message {
+  color: var(--score-poor);
+  font-weight: var(--font-weight-medium);
+}
+
+/* === ПОЛЕ ВВОДА === */
+.inputWrapper {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.input {
+  flex: 1;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sendButton {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sendButton:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+  .chat {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+  }
+
+  .messagesContainer {
+    padding: var(--spacing-md);
+  }
+
+  .message {
+    max-width: 85%;
+  }
+
+  .inputWrapper {
+    border-top: 1px solid var(--border);
+  }
+
+  .inputContainer {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}

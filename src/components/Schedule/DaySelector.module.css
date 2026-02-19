@@ -1,0 +1,128 @@
+/**
+ * СТИЛИ ВЫБОРА ДНЯ
+ */
+
+.daySelector {
+  margin-bottom: var(--spacing-lg);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.days {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding: var(--spacing-xs) 0;
+}
+
+/* Скрываем скроллбар но оставляем прокрутку */
+.days::-webkit-scrollbar {
+  height: 4px;
+}
+
+.days::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+
+.dayButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: var(--spacing-md);
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dayButton:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Выбранный день */
+.dayButton.selected {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.dayButton.selected .dayName,
+.dayButton.selected .date {
+  color: white;
+}
+
+/* Сегодняшний день */
+.dayButton.today {
+  border-color: var(--primary);
+  background-color: var(--surface-hover);
+}
+
+.dayButton.today:not(.selected) .dayName {
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.dayName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  text-transform: capitalize;
+}
+
+.date {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.todayBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--primary);
+  color: white;
+  font-size: var(--font-size-xs);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.dayButton.selected .todayBadge {
+  background-color: white;
+  color: var(--primary);
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+  .dayButton {
+    min-width: 70px;
+    padding: var(--spacing-sm);
+  }
+
+  .dayName {
+    font-size: var(--font-size-sm);
+  }
+
+  .date {
+    font-size: var(--font-size-xs);
+  }
+
+  .todayBadge {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+}

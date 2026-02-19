@@ -1,0 +1,106 @@
+/**
+ * СТИЛИ АВТОДОПОЛНЕНИЯ
+ */
+
+.autocomplete {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-bottom: 1px solid var(--border);
+}
+
+.suggestion:last-child {
+  border-bottom: none;
+}
+
+.suggestion:hover,
+.suggestion.selected {
+  background-color: var(--surface-hover);
+}
+
+.suggestion.selected {
+  border-left: 3px solid var(--primary);
+}
+
+.icon {
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.command {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* === АНИМАЦИЯ ПОЯВЛЕНИЯ === */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.autocomplete {
+  animation: slideUp 0.2s ease;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+  .autocomplete {
+    max-height: 200px;
+  }
+
+  .suggestion {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .icon {
+    font-size: var(--font-size-lg);
+  }
+
+  .command {
+    font-size: var(--font-size-sm);
+  }
+
+  .description {
+    font-size: var(--font-size-xs);
+  }
+}

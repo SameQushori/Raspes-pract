@@ -1,0 +1,64 @@
+/**
+ * ТЕМЫ
+ * Темная и светлая тема приложения
+ */
+
+/* === СВЕТЛАЯ ТЕМА (по умолчанию) === */
+:root,
+[data-theme="light"] {
+  --background: #f5f5f5;
+  --surface: #ffffff;
+  --surface-hover: #f9f9f9;
+  --primary: #2196F3;
+  --primary-hover: #1976D2;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  /* Специфичные для темы */
+  --user-message-bg: #2196F3;
+  --user-message-text: #ffffff;
+  --bot-message-bg: #ffffff;
+  --bot-message-text: #212121;
+}
+
+/* === ТЕМНАЯ ТЕМА === */
+[data-theme="dark"] {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --surface-hover: #2a2a2a;
+  --primary: #64B5F6;
+  --primary-hover: #42A5F5;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border: #333333;
+  --shadow: rgba(0, 0, 0, 0.3);
+
+  /* Специфичные для темы */
+  --user-message-bg: #64B5F6;
+  --user-message-text: #121212;
+  --bot-message-bg: #1e1e1e;
+  --bot-message-text: #ffffff;
+
+  /* Корректировка оценок для темной темы */
+  --score-excellent: #66BB6A;
+  --score-good: #9CCC65;
+  --score-neutral: #FFCA28;
+  --score-poor: #FF7043;
+}
+
+/* === БАЗОВЫЕ СТИЛИ ПРИМЕНЕНИЯ ТЕМЫ === */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color var(--transition-base),
+              color var(--transition-base);
+}
+
+/* Плавная смена темы */
+* {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base);
+}

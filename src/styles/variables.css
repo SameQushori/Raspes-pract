@@ -1,0 +1,88 @@
+/**
+ * CSS ПЕРЕМЕННЫЕ
+ * Базовые цвета, шрифты, отступы
+ */
+
+:root {
+  /* === ЦВЕТА === */
+
+  /* Светлая тема (по умолчанию) */
+  --background: #f5f5f5;
+  --surface: #ffffff;
+  --surface-hover: #f9f9f9;
+  --primary: #2196F3;
+  --primary-hover: #1976D2;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  /* Оценки нечёткой логики */
+  --score-excellent: #4CAF50;  /* 8-10 - Отлично */
+  --score-good: #8BC34A;       /* 6-8 - Хорошо */
+  --score-neutral: #FFC107;    /* 4-6 - Нормально */
+  --score-poor: #FF5722;       /* 0-4 - Плохо */
+
+  /* Приоритеты */
+  --priority-high: #4CAF50;    /* 🟢 Высокий */
+  --priority-medium: #FFC107;  /* 🟡 Средний */
+  --priority-low: #FF5722;     /* 🔴 Низкий */
+
+  /* Типы занятий */
+  --type-lecture: #2196F3;     /* Лекция */
+  --type-practice: #9C27B0;    /* Практика */
+  --type-lab: #FF9800;         /* Лабораторная */
+  --type-other: #607D8B;       /* Другое */
+
+  /* === ТИПОГРАФИКА === */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
+  /* === ОТСТУПЫ === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* === РАДИУСЫ === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* === ТЕНИ === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  /* === ПЕРЕХОДЫ === */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* === РАЗМЕРЫ === */
+  --header-height: 64px;
+  --input-height: 48px;
+  --max-width: 1200px;
+  --chat-max-width: 800px;
+}

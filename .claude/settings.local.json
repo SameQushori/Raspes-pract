@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Admin\\Documents\\GitHub\\Raspes-pract"
+    ]
+  }
+}
